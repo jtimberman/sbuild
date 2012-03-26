@@ -53,21 +53,25 @@ execute "echo dm_snapshot >> /etc/modules" do
   not_if "grep -q ^dm_snapshot /etc/modules"
 end
 
-search(:users, "groups:sbuild") do |u|
-  group "sbuild" do
-    members u['id']
-    append true
-  end
-  template "/home/#{u['id']}/.sbuildrc" do
-    source "sbuildrc.erb"
-    mode 0640
-    owner u['id']
-    group "sbuild"
-  end
-  directory "/home/#{u['id']}/.cache" do
-    mode 0750
-    owner u['id']
-    group "sbuild"
+if Chef::Config[:solo]
+  Chef::Log.warn("This recipe uses search. Chef Solo does not support search.")
+else
+  search(:users, "groups:sbuild") do |u|
+    group "sbuild" do
+      members u['id']
+      append true
+    end
+    template "/home/#{u['id']}/.sbuildrc" do
+      source "sbuildrc.erb"
+      mode 0640
+      owner u['id']
+      group "sbuild"
+    end
+    directory "/home/#{u['id']}/.cache" do
+      mode 0750
+      owner u['id']
+      group "sbuild"
+    end
   end
 end
 
