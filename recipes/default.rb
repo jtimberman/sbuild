@@ -38,7 +38,7 @@ packages = %w{
   svn-buildpackage
 }
 
-case node[:platform]
+case node['platform']
 when "ubuntu"
   packages << "ubuntu-dev-tools"
 end

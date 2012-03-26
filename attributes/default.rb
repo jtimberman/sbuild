@@ -17,9 +17,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default[:sbuild][:mailto] = "root"
-default[:sbuild][:key_id] = ""
-default[:sbuild][:pgp_options] = "-us -uc"
-default[:sbuild][:maintainer_name] = ""
-default[:sbuild][:lv_size] = "5G"
-default[:sbuild][:snapshot_size] = "4G"
+default['sbuild']['mailto'] = "root"
+default['sbuild']['key_id'] = ""
+default['sbuild']['pgp_options'] = "-us -uc"
+default['sbuild']['maintainer_name'] = ""
+default['sbuild']['lv_size'] = "5G"
+default['sbuild']['snapshot_size'] = "4G"

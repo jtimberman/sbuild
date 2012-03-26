@@ -56,7 +56,7 @@ See USAGE, below.
 Attributes
 ==========
 
-All attributes are under the node[:sbuild] space.
+All attributes are under the node['sbuild'] space.
 
 * mailto - address to send mail about sbuilds, default 'root'.
 * key_id - sets the PGP key ID to use, default "".

@@ -23,20 +23,20 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
   include_recipe "lvm"
   include_recipe "xfs"
 
-  params[:distro] ||= node[:platform]
-  vg = params[:vg]
-  chroot_lv = "#{params[:name]}_chroot"
+  params['distro'] ||= node['platform']
+  vg = params['vg']
+  chroot_lv = "#{params['name']}_chroot"
   chroot_path = "/dev/#{vg}/#{chroot_lv}"
-  chroot_name = "#{params[:name]}"
-  lv_size = node[:sbuild][:lv_size]
-  snapshot_size = node[:sbuild][:snapshot_size]
+  chroot_name = "#{params['name']}"
+  lv_size = node['sbuild']['lv_size']
+  snapshot_size = node['sbuild']['snapshot_size']
 
-  case params[:distro]
+  case params['distro']
   when "ubuntu"
-    mirror = params[:mirror] ? params[:mirror] : "http://archive.ubuntu.com/ubuntu"
+    mirror = params['mirror'] ? params['mirror'] : "http://archive.ubuntu.com/ubuntu"
     components = "main restricted universe multiverse"
   when "debian"
-    mirror = params[:mirror] ? params[:mirror] : "http://ftp.debian.org/debian"
+    mirror = params['mirror'] ? params['mirror'] : "http://ftp.debian.org/debian"
     components = "main non-free contrib"
   else
     log "This node's platform is not supported for sbuild!" do
@@ -74,8 +74,8 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
     backup false
     variables(
       :vg => vg,
-      :distro => params[:distro],
-      :release => params[:name],
+      :distro => params['distro'],
+      :release => params['name'],
       :chroot_path => chroot_path,
       :chroot_name => chroot_name,
       :chroot_lv => chroot_lv,
