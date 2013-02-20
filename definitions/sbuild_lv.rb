@@ -54,6 +54,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
 
   template "/etc/schroot/chroot.d/#{chroot_name}" do
     source "schroot.erb"
+    cookbook "sbuild"
     owner "root"
     group "sbuild"
     mode 0640
@@ -68,6 +69,7 @@ define :sbuild_lv, :distro => nil, :vg => "buildvg", :release => "unstable" do
 
   template "/usr/local/bin/mk_chroot_#{chroot_name}.sh" do
     source "mk_chroot.sh.erb"
+    cookbook "sbuild"
     owner "root"
     group "sbuild"
     mode 0750
