@@ -5,7 +5,7 @@ This cookbook uses LVM directly. Please understand what the recipe and
 definition do before using it on your system. It has been tested on
 Debian sid (unstable) only!
 
-That said, the packages hosted by Opscode on apt.opscode.com were
+That said, the packages hosted by Chef Software on apt.chef.io were
 built on a system using this cookbook :-).
 
 Description
@@ -127,8 +127,8 @@ https://help.ubuntu.com/community/SbuildLVMHowto
 License and Author
 ==================
 
-Author:: Joshua Timberman (<joshua@opscode.com>)
-Copyright:: 2010, Opscode, Inc.
+Author:: Joshua Timberman (<joshua@chef.io>)
+Copyright:: 2010, Chef Software, Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

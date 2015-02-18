@@ -2,8 +2,8 @@
 # Cookbook Name:: sbuild
 # Definition:: sbuild_lv
 #
-# Author:: Joshua Timberman <joshua@opscode.com>
-# Copyright 2010, Opscode, Inc. <legal@opscode.com>
+# Author:: Joshua Timberman <joshua@chef.io>
+# Copyright 2010, Chef Software, Inc. <legal@chef.io>
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
